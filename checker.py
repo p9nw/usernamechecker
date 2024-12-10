@@ -1,8 +1,4 @@
-# Author: suenerve
-# I demand my credits to the code wherever it's used.
-# This code is licensed under a NON-commercial use.
-# Open issues at: https://github.com/suenerve/DSV/issues/new
-# NOTE : Spamming Discord's API is against TOS, You may get your account suspended and I am not responsible. For a further caution, use an alt's token and a higher delay.
+#harm
 
 
 
@@ -19,15 +15,15 @@ import datetime
 from configparser import ConfigParser
 import sys
 init(autoreset=True)
-__version__ = "Author: suenerve DSV 1.9"
-__github__= "https://github.com/suenerve"
+__version__ = "1 alpha"
+__github__= "https://github.com/p9nw"
 dir_path = os.path.dirname(os.path.realpath(__file__))
 configur = ConfigParser()
 configur.read(os.path.join(dir_path, f"config.ini"))
 tokens_list = os.path.join(dir_path, f"tokens.txt")
 integ_0 = 0
 sys_url = "https://discord.com/api/v9/users/@me"
-URL = "https://discord.com/api/v9/users/@me/pomelo-attempt"
+URL = "https://discord.com/api/v9/users/@me1/pomelo-attempt"
 def s_sys_h():
    if configur.getboolean("sys","MULTI_TOKEN") == True:
       return {
@@ -124,16 +120,16 @@ def main():
   {__version__} 
   {__github__}                     {Fore.LIGHTCYAN_EX}Connected as {requests.get(sys_url,headers=s_sys_h()).json()['username']}{Ly}#{Fore.LIGHTCYAN_EX}{requests.get(sys_url,headers=s_sys_h()).json()['discriminator']}{Ly}
                             
-  ██████╗ ███████╗██╗   ██╗                     {Fore.LIGHTCYAN_EX}1-{Fore.LIGHTBLACK_EX}[{Fore.YELLOW}Generate names and check{Fore.LIGHTBLACK_EX}]{Ly}             
-  ██╔══██╗██╔════╝██║   ██║                     {Fore.LIGHTCYAN_EX}2-{Fore.LIGHTBLACK_EX}[{Fore.YELLOW}Check a specific list{Fore.LIGHTBLACK_EX}]{Ly}             
-  ██║  ██║███████╗██║   ██║                     
-  ██║  ██║╚════██║╚██╗ ██╔╝                     Config.ini:
-  ██████╔╝███████║ ╚████╔╝                        {Fore.LIGHTCYAN_EX}Digits: {Fore.YELLOW}{sat_digits}{Ly}
-  ╚═════╝ ╚══════╝  ╚═══╝                         {Fore.LIGHTCYAN_EX}String: {Fore.YELLOW}{sat_string}{Ly}
-                                                  {Fore.LIGHTCYAN_EX}Punctuation: {Fore.YELLOW}{sat_punct}{Ly}
-                                                  {Fore.LIGHTCYAN_EX}Multi-Token: {Fore.YELLOW}{sat_multi_token}{Ly}
-                                                  {Fore.LIGHTCYAN_EX}Webhook: {Fore.YELLOW}{webhook_0}{Ly}
-                                                  {Fore.LIGHTCYAN_EX}Delay: {Fore.YELLOW}{Delay}{Ly}
+{Fore.LIGHTCYAN_EX}1-{Fore.LIGHTBLACK_EX}[{Fore.YELLOW}Generate names and check{Fore.LIGHTBLACK_EX}]{Ly}             
+{Fore.LIGHTCYAN_EX}2-{Fore.LIGHTBLACK_EX}[{Fore.YELLOW}Check a specific list{Fore.LIGHTBLACK_EX}]{Ly}             
+  
+Config.ini:
+{Fore.LIGHTCYAN_EX}Digits: {Fore.YELLOW}{sat_digits}{Ly}
+{Fore.LIGHTCYAN_EX}String: {Fore.YELLOW}{sat_string}{Ly}
+{Fore.LIGHTCYAN_EX}Punctuation: {Fore.YELLOW}{sat_punct}{Ly}
+{Fore.LIGHTCYAN_EX}Multi-Token: {Fore.YELLOW}{sat_multi_token}{Ly}
+{Fore.LIGHTCYAN_EX}Webhook: {Fore.YELLOW}{webhook_0}{Ly}
+{Fore.LIGHTCYAN_EX}Delay: {Fore.YELLOW}{Delay}{Ly}
                                                          
 
   Discord Username's availability validator.
@@ -156,7 +152,7 @@ def setdelay():
       setdelay()
 
 def proc0():
-    m_input = input(f"{Fore.LIGHTBLACK_EX}[{Fore.LIGHTGREEN_EX}DSV{Fore.LIGHTBLACK_EX}]:> {Fore.LIGHTYELLOW_EX}").lower()
+    m_input = input(f"{Fore.LIGHTBLACK_EX}[{Fore.LIGHTGREEN_EX}harm{Fore.LIGHTBLACK_EX}]:> {Fore.LIGHTYELLOW_EX}").lower()
     if m_input=="exit":
         sys.exit(0)
     if m_input=="":
@@ -196,7 +192,7 @@ def validate_names(opt,usernames):
            elif json_endpoint["taken"] is True:
               print(f"{Lb}[-]{Fore.RED} '{username}' taken.")
        else:
-           print(f"{Lb}[?]{Fore.RED} Error validating '{username}': {endpoint.json()['message']} |DSV: Make sure you have a valid token.")
+           print(f"{Lb}[?]{Fore.RED} Error validating '{username}': {endpoint.json()['message']} |harm: Make sure you have a valid token.")
    elif opt == 1:
        body = {
            "username": usernames
@@ -219,7 +215,7 @@ def validate_names(opt,usernames):
            elif json_endpoint["taken"] is True:
               print(f"{Lb}[-]{Fore.RED} '{usernames}' taken.")
        else:
-           print(f"{Lb}[?]{Fore.RED} Error validating '{usernames}': {endpoint.json()['message']} |DSV: Make sure you have a valid token.")
+           print(f"{Lb}[?]{Fore.RED} Error validating '{usernames}': {endpoint.json()['message']} |harm: Make sure you have a valid token.")
 def avail_tokens(path):
    with open(path, 'r') as at:
         tokens = at.read().splitlines()
@@ -268,7 +264,7 @@ def ch_send_webhook(val0:str):
     webhook = Discord(url=sat_webhook)
     try:
      webhook.post(
-       username="DSV",
+       username="harm",
        avatar_url="https://cdn.icon-icons.com/icons2/488/PNG/512/search_47686.png",
        embeds=[
     {
@@ -278,21 +274,21 @@ def ch_send_webhook(val0:str):
         "text": "github.com/suenerve/Discord-Username-Checker"
       },
       "author": {
-        "name": "DSV - Username Found",
-        "url": "https://github.com/suenerve/Discord-Username-Checker",
+        "name": "harm --username found",
+        "url": "",
         "icon_url": "https://cdn-icons-png.flaticon.com/512/5290/5290982.png"
       },
       "thumbnail": {
-        "url": "https://raw.githubusercontent.com/suenerve/Discord-Username-Checker/main/images/ignore.png"
+        "url": "https://github.com/p9nw/usernamechecker/blob/main/harm.png"
       },
       "fields": [],
-      "color": 16768000
+      "color": 16761035
     }
   ],
 
     )
     except Exception as s:
-       print(f"{Lb}[!]{Fore.RED} Error: Something went wrong while sending the webhook request. Exception: {s} | DSV: Make sure you have a valid webhook URL")
+       print(f"{Lb}[!]{Fore.RED} Error: Something went wrong while sending the webhook request. Exception: {s} | harm: Make sure you have a valid webhook URL")
    else:
       return
 def opt1func(v1,v2):
@@ -305,7 +301,6 @@ def opt1func(v1,v2):
    exit()
 def get_names(length: int) ->str:
    return ''.join(random.sample(string_0 + digits_0 + punctuation_0, length))
-# Source of this class: https://github.com/10mohi6/discord-webhook-python/blob/master/discordwebhook/discordwebhook.py
 class Discord:
     def __init__(self, *, url):
         self.url = url
