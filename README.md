@@ -1,10 +1,10 @@
 # Username Checker with Webhook Integration
 
 ## Who am I?
-- **Discord**: @mk48xd
+- **Discord**: @ilovehtml
 - I am a **Python** developer with a passion for automation and bots.
 - My main focus is on **web scraping**, **APIs**, and **automation scripts**.
-- I also have experience in **JavaScript** , **HTML** , **C++** and **CSS**
+- I also have experience in **JavaScript** , **HTML** , **C++**,**PHP** and **CSS**
   
 ## What This Script Does
 This script is a **Discord Username Checker** that verifies whether a specific Discord username is available. If the name is available, the script will send a message via a webhook to a specified Discord channel, with an embedded message that includes the username.
